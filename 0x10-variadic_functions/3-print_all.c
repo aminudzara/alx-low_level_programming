@@ -39,7 +39,9 @@ void print_all(const char * const format, ...)
 
 		if (j < 4)
 		{
-			printf("%s", separator);
+			if (separator != NULL)
+				printf("%s", separator);
+
 			f[j].print(pa);
 			separator = ", ";
 		}
