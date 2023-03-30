@@ -19,14 +19,7 @@ list_t *add_node(list_t **head, const char *str)
 	if (new == NULL)
 		return (NULL);
 
-	dup_str = strdup(str);
-	if (dup_str == NULL)
-	{
-		free(new);
-		return (NULL);
-	}
-
-	new->str = dup_str;
+	new->str = strdup(str);
 	new->len = _strlen(str);
 	new->next = *head;
 	*head = new;
@@ -36,7 +29,7 @@ list_t *add_node(list_t **head, const char *str)
 
 /**
  * _strlen - calculate length of a string
- * @str: the string the measure
+ * @s: the string the measure
  *
  * Return: the length of str
  */
